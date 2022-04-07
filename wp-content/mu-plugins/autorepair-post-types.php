@@ -1,9 +1,10 @@
 <?php 
 function autorepair_post_types(){
+	  // Services Post Type
         register_post_type('service',array(
-            'supports' => array('title', 'editor','excerpt'),
+            'supports' => array('title', 'editor','excerpt', 'thumbnail', 'page-attributes', 'custom-fields'),
+		'has_archive' => false,
             'rewrite'=> array('slug' => 'services' ),
-            'has_archive' => true,
             'public' => true, 
             'labels' => array(
                 'name' => "Services",
@@ -12,20 +13,40 @@ function autorepair_post_types(){
                 'all_items' => 'All Services',
                 'singular_name' => "Service"
             ),
+		'taxonomies' => array( 'category' ),
             'menu_icon' => 'dashicons-calendar'
         ));
-        register_post_type('mechanic',array(
-            'supports' => array('title', 'editor'),
-            'rewrite'=> array('slug' => 'mechanics' ),
-            'has_archive' => true,
+
+	  // Testimonials Post Type
+        register_post_type('testimonial',array(
+            'supports' => array('title', 'thumbnail', 'custom-fields'),
+		'has_archive' => false,
+            'rewrite'=> array('slug' => 'testimonials' ),
             'public' => true, 
             'labels' => array(
-                'name' => "Mechanics",
-                'add_new_item' => 'Add New Mechanic',
-                'edit_item' => 'Edit Mechanic',
-                'all_items' => 'All Mechanics',
-                'singular_name' => "Mechanic"
+                'name' => "Testimonials",
+                'add_new_item' => 'Add New Testimonial',
+                'edit_item' => 'Edit Testimonial',
+                'all_items' => 'All Testimonials',
+                'singular_name' => "Testimonial"
             ),
+            'menu_icon' => 'dashicons-star-filled'
+        ));
+
+	  // Staff Post Type
+        register_post_type('staff',array(
+            'supports' => array('title', 'editor', 'thumbnail', 'page-attributes', 'custom-fields'),
+            'has_archive' => false,
+		'rewrite'=> array('slug' => 'staffs' ),
+            'public' => true, 
+            'labels' => array(
+                'name' => "Staffs",
+                'add_new_item' => 'Add New Staff',
+                'edit_item' => 'Edit Staff',
+                'all_items' => 'All Staff',
+                'singular_name' => "Staff"
+            ),
+		'taxonomies' => array( 'category' ),
             'menu_icon' => 'dashicons-index-card'
         ));
 }
