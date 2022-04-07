@@ -1,0 +1,167 @@
+/*
+    Theme Name: Astra
+    Description: This is a custom CSS style sheet for the specific purpose of 
+    styling changes made to custom post type content on each of the preinstalled pages 
+    that came with the Astra theme. 
+*/
+
+.services-page {
+    min-height: 275px;
+    position: relative;
+    text-align: left;
+}
+
+.services-box {
+    padding-right: 30px;
+}
+
+.services-page .icon {
+    color: #253994;
+    font-size: 50px;
+    text-align: center;
+    display: inline-block;
+}
+
+.page-links .page-link, .single .post-navigation a{
+    color: #253994;
+}
+
+.single .entry-header{
+    margin-top: 5em;
+    margin-bottom: 2em;
+}
+
+.ast-separate-container .entry-header{
+    margin-top: 5em;
+    margin-bottom: 1em;
+}
+
+.paginate{
+    text-align: center;
+}
+
+.pagination-prev{
+    color: #253994;
+    padding-right: 10px;
+}
+
+.pagination-next{
+    color: #253994;
+    padding-left: 10px;
+}
+
+.staff .image-wrapper img{
+    width: 240px;
+    height: 230px;
+}
+
+.staff .image-wrapper a:hover > img{
+    opacity: .4;
+}
+
+.staff .staff-member-info h2{
+    margin: 0;
+    font-size: 16px;
+}
+
+.staff .staff-member-info h3{
+    margin: 0;
+    font-size: 18px;
+}
+
+.staff-member-info a{
+    color: #a8a8a8;
+}
+
+.staff .elementor-column{
+    margin-bottom: 50px;
+}
+
+.post-img{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+a, .page-title{
+    color: #ccb100;
+}
+
+.entry-meta, .entry-meta *{
+    color: #ccb100;
+}
+
+.ast-breadcrumbs-wrapper .trail-items .trail-end{
+    color: #ccb100;
+}
+
+.elementor-testimonial-wrapper{
+    overflow:hidden;
+    text-align:center
+}
+
+.elementor-testimonial-wrapper .elementor-testimonial-content{
+    font-size:1.3em;
+    margin-bottom:20px
+}
+
+.elementor-testimonial-wrapper .elementor-testimonial-name{
+    line-height:1.5;
+    display:block
+}
+
+.elementor-testimonial-wrapper .elementor-testimonial-job{
+    font-size:.85em;
+    display:block
+}
+    
+.elementor-testimonial-wrapper .elementor-testimonial-meta{
+    width:100%;
+    line-height:1
+}
+
+.elementor-testimonial-wrapper .elementor-testimonial-meta-inner{
+    display:inline-block
+}
+
+.elementor-testimonial-wrapper .elementor-testimonial-meta .elementor-testimonial-details,.elementor-testimonial-wrapper .elementor-testimonial-meta .elementor-testimonial-image{
+    display:table-cell;
+    vertical-align:middle
+}
+
+.elementor-testimonial-wrapper .elementor-testimonial-meta .elementor-testimonial-image img{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    -o-object-fit:cover;
+    object-fit:cover;
+    max-width:none
+}
+
+.elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-aside .elementor-testimonial-image{
+    padding-right:15px
+}
+
+.elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-aside .elementor-testimonial-details{
+    text-align:left
+}
+
+.elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-top .elementor-testimonial-details,.elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-top .elementor-testimonial-image{
+    display:block
+}
+
+.elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-top .elementor-testimonial-image{
+    margin-bottom:20px
+}
+
+a, .review-text{
+    color: #8d8d8d;
+}
+
+.elementor-testimonial-wrapper{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.elementor-testimonial-wrapper{overflow:hidden;text-align:center}.elementor-testimonial-wrapper .elementor-testimonial-content{font-size:1.3em;margin-bottom:20px}.elementor-testimonial-wrapper .elementor-testimonial-name{line-height:1.5;display:block}.elementor-testimonial-wrapper .elementor-testimonial-job{font-size:.85em;display:block}.elementor-testimonial-wrapper .elementor-testimonial-meta{width:100%;line-height:1}.elementor-testimonial-wrapper .elementor-testimonial-meta-inner{display:inline-block}.elementor-testimonial-wrapper .elementor-testimonial-meta .elementor-testimonial-details,.elementor-testimonial-wrapper .elementor-testimonial-meta .elementor-testimonial-image{display:table-cell;vertical-align:middle}.elementor-testimonial-wrapper .elementor-testimonial-meta .elementor-testimonial-image img{width:60px;height:60px;border-radius:50%;-o-object-fit:cover;object-fit:cover;max-width:none}.elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-aside .elementor-testimonial-image{padding-right:15px}.elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-aside .elementor-testimonial-details{text-align:left}.elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-top .elementor-testimonial-details,.elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-top .elementor-testimonial-image{display:block}.elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-top .elementor-testimonial-image{margin-bottom:20px}

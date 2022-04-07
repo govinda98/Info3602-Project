@@ -176,3 +176,19 @@ require_once ASTRA_THEME_DIR . 'inc/core/markup/class-astra-markup.php';
 require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-filters.php';
 require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-hooks.php';
 require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-functions.php';
+
+/* Shortcodes */
+
+require_once('shortcodes/services.php');
+require_once('shortcodes/staff.php');
+require_once('shortcodes/testimonials.php');
+
+/* Custom CSS */
+
+function custom_style_sheet() {
+	
+	wp_enqueue_style( 'custom-styling', get_stylesheet_directory_uri() . '/custom.css' );
+
+}
+
+add_action('wp_enqueue_scripts', 'custom_style_sheet');
