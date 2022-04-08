@@ -2,8 +2,9 @@
 function autorepair_post_types(){
 	  // Services Post Type
         register_post_type('service',array(
+            'capability_type' => 'service',
             'supports' => array('title', 'editor','excerpt', 'thumbnail', 'page-attributes', 'custom-fields'),
-		'has_archive' => false,
+		    'has_archive' => false,
             'rewrite'=> array('slug' => 'services' ),
             'public' => true, 
             'labels' => array(
@@ -19,8 +20,9 @@ function autorepair_post_types(){
 
 	  // Testimonials Post Type
         register_post_type('testimonial',array(
+            'capability_type' => 'testimonial',
             'supports' => array('title', 'thumbnail', 'custom-fields'),
-		'has_archive' => false,
+		    'has_archive' => false,
             'rewrite'=> array('slug' => 'testimonials' ),
             'public' => true, 
             'labels' => array(
@@ -35,9 +37,10 @@ function autorepair_post_types(){
 
 	  // Staff Post Type
         register_post_type('staff',array(
+            'capability_type' => 'staff',
             'supports' => array('title', 'editor', 'thumbnail', 'page-attributes', 'custom-fields'),
             'has_archive' => false,
-		'rewrite'=> array('slug' => 'staffs' ),
+		    'rewrite'=> array('slug' => 'staffs' ),
             'public' => true, 
             'labels' => array(
                 'name' => "Staffs",
