@@ -12,11 +12,14 @@
 								<section class="elementor-section elementor-top-section elementor-element elementor-section-boxed" data-element_type="section">
 									<div class="elementor-container elementor-column-gap-default">				
 										<div class="elementor-column elementor-col-50 elementor-top-column elementor-element data-element_type="column">
-											<div class="elementor-widget-wrap-staff">	
-												<div class="post-img"><?php echo the_post_thumbnail('thumbnail'); ?></div>										
+											<div class="elementor-widget-wrap-staff">									
 												<h1><?php echo get_the_title(); ?></h1>
-												<h5><?php echo do_shortcode('[acf field="review"]'); ?></h5>
-												<?php echo get_the_content(); ?>
+												<p class="test-review"><?php echo do_shortcode('[acf field="review"]'); ?></p>
+												<div class="test-img"><?php echo the_post_thumbnail('thumbnail'); ?></div>
+												<div class="test-info">
+													<p class="test-field"><?php echo do_shortcode('[acf field="name"]'); ?></p> 
+													<p class="test-field"><?php echo do_shortcode('[acf field="job"]'); ?></p>
+												</div>	
 											</div>
 										</div>					
 									</div>
