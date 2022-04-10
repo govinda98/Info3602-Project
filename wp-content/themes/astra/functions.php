@@ -192,3 +192,51 @@ function custom_style_sheet() {
 }
 
 add_action('wp_enqueue_scripts', 'custom_style_sheet');
+
+?>
+
+<?php 
+
+/* Ajax Search */
+
+add_action( 'wp_footer', 'ajax_fetch' );
+function ajax_fetch() {
+
+?>
+
+<script type="text/javascript">
+function fetch(){
+
+    jQuery.ajax({
+        url: '<?php echo admin_url('admin-ajax.php'); ?>',
+        type: 'post',
+        data: { action: 'data_fetch', keyword: jQuery('#keyword').val() },
+        success: function(data) {
+            jQuery('#datafetch').html( data );
+        }
+    });
+
+}
+</script>
+
+<?php
+}
+
+// WP Query fetches the search results
+
+add_action('wp_ajax_data_fetch' , 'data_fetch');
+add_action('wp_ajax_nopriv_data_fetch','data_fetch');
+function data_fetch(){
+
+    $query = new WP_Query( array( 'posts_per_page' => 5, 's' => esc_attr( $_POST['keyword'] ), 'post_type' => array('page','post', 'testimonial', 'service', 'staff') ) );
+    if( $query->have_posts() ) :
+        echo '<ul>';
+        while( $query->have_posts() ): $query->the_post(); ?>
+            <li><a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a></li>
+        <?php endwhile;
+       echo '</ul>';
+        wp_reset_postdata();  
+    endif;
+
+    die();
+}

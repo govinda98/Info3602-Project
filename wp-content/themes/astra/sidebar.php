@@ -36,6 +36,16 @@ echo '<div ';
 
 		astra_sidebars_after();
 		?>
+		<div class="search_bar">
+    		<form action="/" method="get" autocomplete="off">
+        		<input type="text" name="s" placeholder="Search" id="keyword" class="input_search" onkeyup="fetch()">
+        			<button>
+            			Search
+        			</button>
+    		</form>
+			<div class="search_result" id="datafetch">
+			</div>
+		</div>
 
 	</div><!-- .sidebar-main -->
 </div><!-- #secondary -->
