@@ -199,7 +199,7 @@ add_action('wp_enqueue_scripts', 'custom_style_sheet');
 
 /* Ajax Search */
 
-add_action( 'wp_footer', 'ajax_fetch' );
+add_action('wp_footer', 'ajax_fetch');
 function ajax_fetch() {
 
 ?>
@@ -213,6 +213,10 @@ function fetch(){
         data: { action: 'data_fetch', keyword: jQuery('#keyword').val() },
         success: function(data) {
             jQuery('#datafetch').html( data );
+			if(jQuery('#keyword').val()==""){
+				jQuery('#datafetch').html("");   // displays no results if search input is empty
+				return;                  // exits fetch operation
+			}
         }
     });
 
@@ -225,18 +229,26 @@ function fetch(){
 // WP Query fetches the search results
 
 add_action('wp_ajax_data_fetch' , 'data_fetch');
-add_action('wp_ajax_nopriv_data_fetch','data_fetch');
+add_action('wp_ajax_nopriv_data_fetch' , 'data_fetch');
+
 function data_fetch(){
 
-    $query = new WP_Query( array( 'posts_per_page' => 5, 's' => esc_attr( $_POST['keyword'] ), 'post_type' => array('page','post', 'testimonial', 'service', 'staff') ) );
+    $query = new WP_Query( 
+		array( 
+			'posts_per_page' => -1, // number of items to display
+			's' => esc_attr( $_POST['keyword'] ), // name of input field
+			'post_type' => array('page','post', 'testimonial', 'service', 'staff') // items to be queried
+		)
+	);
+
     if( $query->have_posts() ) :
         echo '<ul>';
-        while( $query->have_posts() ): $query->the_post(); ?>
-            <li><a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a></li>
+        while($query->have_posts()): $query->the_post(); ?>
+            <li><a href="<?php echo esc_url(post_permalink()); ?>"><?php the_title();?></a></li>
         <?php endwhile;
-       echo '</ul>';
+        echo '</ul>';
         wp_reset_postdata();  
     endif;
 
-    die();
+    wp_die();
 }
