@@ -16,6 +16,20 @@
 												<h1><?php echo get_the_title(); ?></h1>
 												<h5><?php echo do_shortcode('[acf field="description"]'); ?></h5>
 												<?php echo get_the_content(); ?>
+												<div class="related-mechanics">
+													<?php 
+														$relatedMechanics = get_field('mechanics');
+														if ($relatedMechanics) {
+															echo '<hr class="section-break">';
+															echo '<h3>Related Mechanics</h3>';
+															echo '<ul class="link-list min-list">';
+															foreach($relatedMechanics as $mechanic){ ?>
+																<li><a href="<?php echo get_the_permalink($mechanic);?>"> <?php echo get_the_title($mechanic);?> </a></li> 
+															<?php }
+															echo '</ul>';
+														}													
+													?>		 
+												</div>
 											</div>
 										</div>
 									</div>
